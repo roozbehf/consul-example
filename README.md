@@ -1,4 +1,4 @@
-# Sensu Installation using Vagrant with Ansible
+# Consul Installation using Vagrant and Ansible
 
 *NOTE:* This is a work in progress.
 
