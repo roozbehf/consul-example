@@ -1,0 +1,3 @@
+---
+deb_pkg_dir: /opt/debs
+temp_dir: /tmp

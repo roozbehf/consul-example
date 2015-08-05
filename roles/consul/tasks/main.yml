@@ -1,0 +1,23 @@
+---
+- name: check Consul installation
+  stat: path="{{ consul_install_dir }}"
+  register: check_consul
+
+- name: create Consul directory
+  file: path="{{ consul_install_dir }}" state=directory mode=0755
+  when: check_consul.stat.exists == False
+  register: need_consul_installation
+
+- name: get Consul
+  get_url: >
+    url="{{ consul_install_url }}"
+    dest="{{ consul_install_dir }}/consul.zip"
+  when: need_consul_installation|success
+  register: download_consul
+
+- name: install Consul
+  unarchive: >
+    copy=no
+    src="{{ consul_install_dir }}/consul.zip"
+    dest="{{ consul_install_dir }}"
+  when: download_consul|success

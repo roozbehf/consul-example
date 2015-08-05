@@ -1,0 +1,3 @@
+---
+consul_install_url: "http://dl.bintray.com/mitchellh/consul/0.5.2_linux_amd64.zip"
+consul_install_dir: /opt/consul

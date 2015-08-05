@@ -1,0 +1,6 @@
+---
+- hosts: all
+  roles:
+    - common_vagrant
+    - consul
+  sudo: yes
